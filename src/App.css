@@ -1,0 +1,388 @@
+/* Add this to the existing CSS */
+.welcome-message {
+  position: fixed;
+  top: 60px; /* Adjusted to avoid overlap with header */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85); /* Slightly darker background */
+  color: #ffffff; /* Pure white text */
+  padding: 10px 20px;
+  border-radius: 10px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Hide the scrollbar but allow scrolling */
+body::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.signup-background, .login-background, .dashboard-background, .expenses-background, .income-background, .budget-background, .report-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.signup-background {
+  background-image: url('./image1.png');
+}
+
+.login-background {
+  background-image: url('./image2.png');
+}
+
+.dashboard-background {
+  background-image: url('./image3.png');
+}
+
+.expenses-background {
+  background-image: url('./expense_track_image.png');
+}
+
+.income-background {
+  background-image: url('./income_image.png');
+}
+
+.budget-background {
+  background-image: url('./budget_image.png');
+}
+
+.report-background {
+  background-image: url('./report_image2.png');
+}
+
+.container {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin: 0 0 25px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+  font-size: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+  padding: 12px 15px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.dashboard {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboard p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.dashboard .summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.dashboard .summary div {
+  flex: 1;
+  margin: 0 10px;
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dashboard .summary div:hover {
+  background: #e0e0e0;
+}
+
+.dashboard a {
+  display: block;
+  margin-top: 20px;
+  color: #007bff;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.section p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.expenses-container, .income-container, .budget-container, .report-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+
+.expenses-container h2, .income-container h2, .budget-container h2, .report-container h2 {
+  margin-bottom: 20px;
+}
+
+.expenses-container form, .income-container form, .budget-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.expenses-container label, .income-container label, .budget-container label {
+  margin-bottom: 8px;
+}
+
+.expenses-container input, .income-container input, .budget-container input,
+.expenses-container select, .income-container select, .budget-container select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.expenses-container button, .income-container button, .budget-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.expenses-container button:hover, .income-container button:hover, .budget-container button:hover {
+  background: #0056b3;
+}
+
+.expenses-list, .income-list {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto; /* Allow scrolling but hide scrollbar */
+}
+
+.expenses-list::-webkit-scrollbar, .income-list::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.expenses-list table, .income-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expenses-list th, .income-list th,
+.expenses-list td, .income-list td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.expenses-list th, .income-list th {
+  text-align: left;
+  background: #f7f7f7;
+}
+
+.expenses-list td:last-child, .income-list td:last-child {
+  text-align: right;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-more button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.view-more button:hover {
+  background: #0056b3;
+}
+
+/* Add this to the existing CSS */
+.chart-container {
+  margin-bottom: 50px; /* Adjust the margin as needed */
+}
+
+/* Add the new footer section styles */
+.footer-background {
+  background: #000;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-container p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links a {
+  color: #007bff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact {
+  margin-top: 20px;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
