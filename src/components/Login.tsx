@@ -25,7 +25,6 @@ const Login: React.FC = () => {
 
   const handleLogin = () => {
     if (!validateForm()) return;
-    const user = { username, password };
     console.log('Login:', { username, password, rememberMe });
 
     const savedUser = JSON.parse(localStorage.getItem('user') || '{}');
